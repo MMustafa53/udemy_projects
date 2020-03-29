@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTrashAlt} from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +15,7 @@ function Navbar(props) {
             <h2> Navbar : title : {props.title}</h2>
             <h2> Navbar : isim : {props.isim}</h2>
             <h2> Navbar : id : {props.id}</h2>
-            <FontAwesomeIcon icon={faTrashAlt} onClick={deletes}/>
+            <a href=""><FontAwesomeIcon icon={faTrashAlt} onClick={deletes}/></a>
         </div>
     );
 }

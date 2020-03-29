@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="887544fe-0aba-4b2d-a662-743a73921ea3" name="Default Changelist" comment="">
+    <list default="true" id="887544fe-0aba-4b2d-a662-743a73921ea3" name="Default Changelist" comment="users ready">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
       <workItem from="1585133731201" duration="861000" />
       <workItem from="1585134618386" duration="359000" />
       <workItem from="1585135089412" duration="1769000" />
-      <workItem from="1585473679154" duration="15985000" />
+      <workItem from="1585473679154" duration="17623000" />
     </task>
     <task id="LOCAL-00001" summary="asd">
       <created>1585478660861</created>
@@ -94,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585496898634</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="users ready">
+      <created>1585500614622</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585500614622</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,17 +109,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="asd" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="users ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="users ready" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2795" y="395" width="800" height="691" key="#ESLint" timestamp="1585490228043">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2795" y="395" width="800" height="691" key="#ESLint/1920.0.2560.1440/4480.0.1920.1080/0.27.1920.1053@1920.0.2560.1440" timestamp="1585490228043" />
-    <state x="2752" y="275" width="886" height="924" key="CommitChangelistDialog2" timestamp="1585496898589">
+    <state x="2752" y="275" width="886" height="924" key="CommitChangelistDialog2" timestamp="1585502067340">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2752" y="275" width="886" height="924" key="CommitChangelistDialog2/1920.0.2560.1440/4480.0.1920.1080/0.27.1920.1053@1920.0.2560.1440" timestamp="1585496898589" />
+    <state x="2752" y="275" width="886" height="924" key="CommitChangelistDialog2/1920.0.2560.1440/4480.0.1920.1080/0.27.1920.1053@1920.0.2560.1440" timestamp="1585502067340" />
     <state width="2514" height="393" key="GridCell.Tab.0.bottom" timestamp="1585498447786">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -134,10 +141,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2689" y="368" width="1022" height="737" key="SettingsEditor/1920.0.2560.1440/4480.0.1920.1080/0.27.1920.1053@1920.0.2560.1440" timestamp="1585135574051" />
-    <state x="2795" y="458" width="800" height="558" key="Vcs.Push.Dialog.v2" timestamp="1585496899889">
+    <state x="2795" y="458" width="800" height="558" key="Vcs.Push.Dialog.v2" timestamp="1585500616385">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2795" y="458" width="800" height="558" key="Vcs.Push.Dialog.v2/1920.0.2560.1440/4480.0.1920.1080/0.27.1920.1053@1920.0.2560.1440" timestamp="1585496899889" />
+    <state x="2795" y="458" width="800" height="558" key="Vcs.Push.Dialog.v2/1920.0.2560.1440/4480.0.1920.1080/0.27.1920.1053@1920.0.2560.1440" timestamp="1585500616385" />
     <state x="2863" y="349" width="672" height="678" key="search.everywhere.popup" timestamp="1585476496569">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
