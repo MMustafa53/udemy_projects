@@ -1,18 +1,24 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import Navbar from "./Navbar";
 class User extends Component {
+    static defaultProps = {
+        isim: "İsimsiz"
+    };
     render() {
         // Destructing
         // const {prospun, icindeki, degerler} = this.props;
         const {isim} = this.props;
         return (
             <div className="container-lg">
-                <h4>İsim : {isim}asdasdas
-                    {<FontAwesomeIcon icon={faTrashAlt} size="10x"/>}ssss
-                </h4>
-                <FontAwesomeIcon icon='accessible-icon'/>
+                {
+                    isim.map(user => {
+                        return (
+                            <Navbar title={user.title} isim={user.isim} id={user.id}/>
+                        )
+                    })
+                }
+
             </div>
         );
     }
@@ -21,7 +27,7 @@ class User extends Component {
 User.propTypes = {
     isim: PropTypes.string.isRequired
 };
-User.defaultProps = {
-    isim: "İsimsiz"
-};
+// User.defaultProps = {
+//     isim: "İsimsiz"
+// };
 export default User;
