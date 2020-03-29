@@ -5,16 +5,28 @@ class User extends Component {
     static defaultProps = {
         isim: "İsimsiz"
     };
+
     render() {
+        const {my_Arr, deleteUser} = this.props;
+        let deleteUserr = (id) => {
+            console.log("user e geldi");
+            console.log(id);
+            deleteUser(id);
+        };
         // Destructing
         // const {prospun, icindeki, degerler} = this.props;
-        const {isim} = this.props;
         return (
             <div className="container-lg">
                 {
-                    isim.map(user => {
+                    my_Arr.map(user => {
                         return (
-                            <Navbar title={user.title} isim={user.isim} id={user.id}/>
+                            <Navbar
+                                key={user.id}
+                                title={user.title}
+                                isim={user.isim}
+                                id={user.id}
+                                deleteUser={id => deleteUserr(id)}
+                            />
                         )
                     })
                 }

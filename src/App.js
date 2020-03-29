@@ -2,11 +2,9 @@ import React, {useState} from 'react';
 import './App.css';
 
 import User from './components/User';
-import Navbar from "./components/Navbar";
 
 function App() {
-    const [state, setState] = useState({
-        users: [
+    const [state, setState] = useState([
             {
                 id: 1,
                 isim: "afatsum",
@@ -18,14 +16,20 @@ function App() {
                 title: "titlees"
             }
         ]
-    });
-    
+    );
+    let deleteUser = (id) => {
+        console.log("app e geldi");
+        console.log(state);
+        console.log(id);
+        setState(state.filter(user => id !== user.id));
+    };
+
     return (
         <div>
             <User
-                isim={state.users}
+                my_Arr={state}
+                deleteUser={deleteUser}
             />
-            <Navbar title="titleım"/>
         </div>
     );
 }
