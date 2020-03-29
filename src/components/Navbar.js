@@ -15,7 +15,8 @@ function Navbar(props) {
             <h2> Navbar : title : {props.title}</h2>
             <h2> Navbar : isim : {props.isim}</h2>
             <h2> Navbar : id : {props.id}</h2>
-            <a href=""><FontAwesomeIcon icon={faTrashAlt} onClick={deletes}/></a>
+            {/* eslint-disable-next-line no-script-url,jsx-a11y/anchor-is-valid */}
+            <a href="#"><FontAwesomeIcon icon={faTrashAlt} onClick={deletes}/></a>
         </div>
     );
 }
