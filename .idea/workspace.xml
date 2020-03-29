@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="887544fe-0aba-4b2d-a662-743a73921ea3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,14 +73,30 @@
       <workItem from="1585133731201" duration="861000" />
       <workItem from="1585134618386" duration="359000" />
       <workItem from="1585135089412" duration="1769000" />
-      <workItem from="1585473679154" duration="4850000" />
+      <workItem from="1585473679154" duration="5107000" />
     </task>
+    <task id="LOCAL-00001" summary="asd">
+      <created>1585478660861</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585478660861</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="asd" />
+    <option name="LAST_COMMIT_MESSAGE" value="asd" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="2752" y="275" width="886" height="924" key="CommitChangelistDialog2" timestamp="1585478660761">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2752" y="275" width="886" height="924" key="CommitChangelistDialog2/1920.0.2560.1440/4480.0.1920.1080/0.27.1920.1053@1920.0.2560.1440" timestamp="1585478660761" />
     <state width="2514" height="393" key="GridCell.Tab.0.bottom" timestamp="1585478631036">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -105,6 +117,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2689" y="368" width="1022" height="737" key="SettingsEditor/1920.0.2560.1440/4480.0.1920.1080/0.27.1920.1053@1920.0.2560.1440" timestamp="1585135574051" />
+    <state x="2795" y="458" width="800" height="558" key="Vcs.Push.Dialog.v2" timestamp="1585478667347">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2795" y="458" width="800" height="558" key="Vcs.Push.Dialog.v2/1920.0.2560.1440/4480.0.1920.1080/0.27.1920.1053@1920.0.2560.1440" timestamp="1585478667347" />
     <state x="2863" y="349" width="672" height="678" key="search.everywhere.popup" timestamp="1585476496569">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
