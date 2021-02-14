@@ -9,7 +9,8 @@ function App() {
             {age: "25", name: "Musto"},
             {age: "26", name: "Musto6"},
             {age: "27", name: "Musto7"},
-        ]
+        ],
+        showPersons: false
     })
 
     const [val, setVal] = useState('')
@@ -20,7 +21,7 @@ function App() {
         setState({
             persons: [
                 {age: "35", name: names},
-                {age: "36", name: val} ,
+                {age: "36", name: val},
                 {age: "37", name: "3Musto7"}
             ]
         })
@@ -34,10 +35,24 @@ function App() {
         setState({
             persons: [
                 {age: "35", name: 'Name1'},
-                {age: "36", name: event.target.value} ,
+                {age: "36", name: event.target.value},
                 {age: "37", name: "3Musto7"}
             ]
         })
+    }
+    const togglePersonsHandler = () => {
+        console.log(state)
+        const isShow = !state.showPersons;
+        // setState(prevState => ({
+        //     ...prevState, showPersons: isShow
+        // }));
+        setState(prevState => {
+            let prv = state
+            prv.showPersons = isShow
+            return {...prv}
+        })
+        //setState({persons: state.persons, showPersons: !state.showPersons})
+        console.log(state)
     }
     const style = {backgroundColor: 'black', cursor: 'pointer'}
     return (
@@ -58,10 +73,16 @@ function App() {
                 </a>
                 <textarea id="name" value={val} onChange={handleSubmit}/>
                 {/*<button onClick={switchNameHandler.bind(this, 'Hüsrev')}>Değiştir</button>*/}
-                <button style={style} onClick={() => switchNameHandler('Hüsrevoğlu')}>Değiştir</button>
-                <Person age={state.persons[0].age} name={state.persons[0].name} func={switchNameHandler.bind(this, 'Hüsrev')}/>
-                <Person age={state.persons[1].age} name={state.persons[1].name} func={switchNameHandler} changeName={changeNameHandle}/>
-                <Person age={state.persons[2].age} name={state.persons[2].name} func={switchNameHandler} changeName={handleSubmit}/>
+                <button style={style} onClick={togglePersonsHandler}>Değiştir</button>
+                {state.showPersons ? <div>
+                    <Person age={state.persons[0].age} name={state.persons[0].name}
+                            func={switchNameHandler.bind(this, 'Hüsrev')}/>
+                    <Person age={state.persons[1].age} name={state.persons[1].name} func={switchNameHandler}
+                            changeName={changeNameHandle}/>
+                    <Person age={state.persons[2].age} name={state.persons[2].name} func={switchNameHandler}
+                            changeName={handleSubmit}/>
+                </div> : null
+                }
 
             </header>
         </div>
