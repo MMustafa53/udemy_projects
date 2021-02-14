@@ -43,14 +43,18 @@ function App() {
     const togglePersonsHandler = () => {
         console.log(state)
         const isShow = !state.showPersons;
+        // v1
         // setState(prevState => ({
         //     ...prevState, showPersons: isShow
         // }));
+
+        // v2
         setState(prevState => {
             let prv = state
             prv.showPersons = isShow
             return {...prv}
         })
+        // v3
         //setState({persons: state.persons, showPersons: !state.showPersons})
         console.log(state)
     }
