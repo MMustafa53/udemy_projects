@@ -6,9 +6,9 @@ import Person from './components/Person/Person'
 function App() {
     const [state, setState] = useState({
         persons: [
-            {age: "25", name: "Musto"},
-            {age: "26", name: "Musto6"},
-            {age: "27", name: "Musto7"},
+            {age: "25", name: "Musto", "id": 1},
+            {age: "26", name: "Musto6", "id": 2},
+            {age: "27", name: "Musto7", "id": 3},
         ],
         showPersons: false
     })
@@ -31,13 +31,20 @@ function App() {
         setVal(evt.target.value)
     }
 
-    const changeNameHandle = (event) => {
+    const changeNameHandle = (event, id) => {
+        const personIndex = state.persons.findIndex(itm => {
+            return itm.id === id
+        })
+        // const person = state.persons[personIndex]   using v1
+        const person ={
+            ...state.persons[personIndex]
+        }
+        person.name = event.target.value;
+        const persons_state = {...state};
+        persons_state.persons[personIndex] = person;
+        // const person_obj = Object.assign({}, state.persons[personIndex])  using v2
         setState({
-            persons: [
-                {age: "35", name: 'Name1'},
-                {age: "36", name: event.target.value},
-                {age: "37", name: "3Musto7"}
-            ]
+            ...persons_state
         })
     }
     const togglePersonsHandler = () => {
@@ -73,7 +80,8 @@ function App() {
                         func={() => deletePersonHandler(index)}
                         name={item.name}
                         age={item.age}
-                        key={index}/>
+                        key={index}
+                        changeName={(event) => changeNameHandle(event, item.id)}/>
                 })}
                 {/*<Person age={state.persons[0].age} name={state.persons[0].name}*/}
                 {/*        func={switchNameHandler.bind(this, 'Hüsrev')}/>*/}
