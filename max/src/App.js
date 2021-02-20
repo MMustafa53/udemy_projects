@@ -49,22 +49,31 @@ function App() {
 
         // v2
         setState(prevState => {
-            let prv = state
-            prv.showPersons = isShow
-            return {...prv}
+            prevState.showPersons = isShow
+            return {...prevState}
         })
         // v3
         //setState({persons: state.persons, showPersons: !state.showPersons})
     }
-    const style = {backgroundColor: 'black', cursor: 'pointer'}
+
+    const deletePersonHandler = (personIndex) => {
+        const persons = state.persons
+        //const persons = [...state.persons]
+        persons.splice(personIndex, 1)
+        setState(pState => ({...pState, persons: persons}))
+    }
+
+    const style = {backgroundColor: 'pink', cursor: 'pointer'}
     let persons = null;
     if (state.showPersons) {
         persons = (
             <div>
-                {state.persons.map(item => {
+                {state.persons.map((item, index) => {
                     return <Person
+                        func={() => deletePersonHandler(index)}
                         name={item.name}
-                        age={item.age}/>
+                        age={item.age}
+                        key={index}/>
                 })}
                 {/*<Person age={state.persons[0].age} name={state.persons[0].name}*/}
                 {/*        func={switchNameHandler.bind(this, 'Hüsrev')}/>*/}
@@ -78,19 +87,19 @@ function App() {
         //React.createElement('div', {className: 'App'}, React.createElement('h1', {className: 'App-header'}, 'Mustafa selam canım'))
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-                <textarea id="name" value={val} onChange={handleSubmit}/>
+                {/*<img src={logo} className="App-logo" alt="logo"/>*/}
+                {/*<p>*/}
+                {/*    Edit <code>src/App.js</code> and save to reload.*/}
+                {/*</p>*/}
+                {/*<a*/}
+                {/*    className="App-link"*/}
+                {/*    href="https://reactjs.org"*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*>*/}
+                {/*    Learn React*/}
+                {/*</a>*/}
+                {/*<textarea id="name" value={val} onChange={handleSubmit}/>*/}
                 {/*<button onClick={switchNameHandler.bind(this, 'Hüsrev')}>Değiştir</button>*/}
                 <button style={style} onClick={togglePersonsHandler}>Değiştir</button>
                 {persons}
