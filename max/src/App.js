@@ -57,6 +57,17 @@ function App() {
         //setState({persons: state.persons, showPersons: !state.showPersons})
     }
     const style = {backgroundColor: 'black', cursor: 'pointer'}
+    let persons = null;
+    if (state.showPersons) {
+        persons = (<div>
+            <Person age={state.persons[0].age} name={state.persons[0].name}
+                    func={switchNameHandler.bind(this, 'Hüsrev')}/>
+            <Person age={state.persons[1].age} name={state.persons[1].name} func={switchNameHandler}
+                    changeName={changeNameHandle}/>
+            <Person age={state.persons[2].age} name={state.persons[2].name} func={switchNameHandler}
+                    changeName={handleSubmit}/>
+        </div>)
+    }
     return (
         //React.createElement('div', {className: 'App'}, React.createElement('h1', {className: 'App-header'}, 'Mustafa selam canım'))
         <div className="App">
@@ -76,16 +87,7 @@ function App() {
                 <textarea id="name" value={val} onChange={handleSubmit}/>
                 {/*<button onClick={switchNameHandler.bind(this, 'Hüsrev')}>Değiştir</button>*/}
                 <button style={style} onClick={togglePersonsHandler}>Değiştir</button>
-                {state.showPersons ? <div>
-                    <Person age={state.persons[0].age} name={state.persons[0].name}
-                            func={switchNameHandler.bind(this, 'Hüsrev')}/>
-                    <Person age={state.persons[1].age} name={state.persons[1].name} func={switchNameHandler}
-                            changeName={changeNameHandle}/>
-                    <Person age={state.persons[2].age} name={state.persons[2].name} func={switchNameHandler}
-                            changeName={handleSubmit}/>
-                </div> : null
-                }
-
+                {persons}
             </header>
         </div>
     );
