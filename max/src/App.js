@@ -41,7 +41,6 @@ function App() {
         })
     }
     const togglePersonsHandler = () => {
-        console.log(state)
         const isShow = !state.showPersons;
         // v1
         // setState(prevState => ({
@@ -56,7 +55,6 @@ function App() {
         })
         // v3
         //setState({persons: state.persons, showPersons: !state.showPersons})
-        console.log(state)
     }
     const style = {backgroundColor: 'black', cursor: 'pointer'}
     return (
