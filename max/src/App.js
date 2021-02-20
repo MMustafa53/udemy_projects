@@ -59,14 +59,20 @@ function App() {
     const style = {backgroundColor: 'black', cursor: 'pointer'}
     let persons = null;
     if (state.showPersons) {
-        persons = (<div>
-            <Person age={state.persons[0].age} name={state.persons[0].name}
-                    func={switchNameHandler.bind(this, 'Hüsrev')}/>
-            <Person age={state.persons[1].age} name={state.persons[1].name} func={switchNameHandler}
-                    changeName={changeNameHandle}/>
-            <Person age={state.persons[2].age} name={state.persons[2].name} func={switchNameHandler}
-                    changeName={handleSubmit}/>
-        </div>)
+        persons = (
+            <div>
+                {state.persons.map(item => {
+                    return <Person
+                        name={item.name}
+                        age={item.age}/>
+                })}
+                {/*<Person age={state.persons[0].age} name={state.persons[0].name}*/}
+                {/*        func={switchNameHandler.bind(this, 'Hüsrev')}/>*/}
+                {/*<Person age={state.persons[1].age} name={state.persons[1].name} func={switchNameHandler}*/}
+                {/*        changeName={changeNameHandle}/>*/}
+                {/*<Person age={state.persons[2].age} name={state.persons[2].name} func={switchNameHandler}*/}
+                {/*        changeName={handleSubmit}/>*/}
+            </div>)
     }
     return (
         //React.createElement('div', {className: 'App'}, React.createElement('h1', {className: 'App-header'}, 'Mustafa selam canım'))
