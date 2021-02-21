@@ -32,7 +32,7 @@ function App() {
     const MyButton = styled.button`
       background-color: ${props => props.alt ? 'pink': 'purple'};
       cursor: pointer;
-      &:hover {background-color: black};
+      &:hover {background-color: ${props => props.alt ? 'black': 'salmon'}};
     `;
     const handleSubmit = (evt) => {
         setVal(evt.target.value)
