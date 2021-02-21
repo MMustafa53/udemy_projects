@@ -30,7 +30,7 @@ function App() {
     }
 
     const MyButton = styled.button`
-      background-color: pink;
+      background-color: ${props => props.alt ? 'pink': 'purple'};
       cursor: pointer;
       &:hover {background-color: black};
     `;
@@ -127,7 +127,7 @@ function App() {
                 {/*</a>*/}
                 {/*<textarea id="name" value={val} onChange={handleSubmit}/>*/}
                 {/*<button onClick={switchNameHandler.bind(this, 'Hüsrev')}>Değiştir</button>*/}
-                <MyButton onClick={togglePersonsHandler}>Değiştir</MyButton>
+                <MyButton alt={state.showPersons} onClick={togglePersonsHandler}>Değiştir</MyButton>
                 {/*<button style={style} onClick={togglePersonsHandler}>Değiştir</button>*/}
                 {persons}
             </header>
