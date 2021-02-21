@@ -46,3 +46,20 @@
   text-align: center;
   box-shadow: 0 2px 3px #ccc;
 }
+
+.red{
+  color: red;
+  background-color: #61dafb;
+  font-size: 50px;
+}
+
+.bold{
+  color: yellow;
+  background-color: #cccccc;
+}
+
+/*@media(min-width: 500px) {*/
+/*  .Person{*/
+/*    width: 450px;*/
+/*  }*/
+/*}*/

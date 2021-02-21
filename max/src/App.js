@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {useState} from "react";
-import Person from './components/Person/Person'
+import Person from './components/Person/Person';
+import styled from 'styled-components';
+// import Radium, { StyleRoot } from 'radium';
 
 function App() {
     const [state, setState] = useState({
@@ -27,6 +29,11 @@ function App() {
         })
     }
 
+    const MyButton = styled.button`
+      background-color: pink;
+      cursor: pointer;
+      &:hover {background-color: black};
+    `;
     const handleSubmit = (evt) => {
         setVal(evt.target.value)
     }
@@ -36,7 +43,7 @@ function App() {
             return itm.id === id
         })
         // const person = state.persons[personIndex]   using v1
-        const person ={
+        const person = {
             ...state.persons[personIndex]
         }
         person.name = event.target.value;
@@ -70,7 +77,7 @@ function App() {
         setState(pState => ({...pState, persons: persons}))
     }
 
-    const style = {backgroundColor: 'pink', cursor: 'pointer'}
+    const style = {backgroundColor: 'pink', cursor: 'pointer', ':hover': {backgroundColor: 'black'}}
     let persons = null;
     if (state.showPersons) {
         persons = (
@@ -90,11 +97,22 @@ function App() {
                 {/*<Person age={state.persons[2].age} name={state.persons[2].name} func={switchNameHandler}*/}
                 {/*        changeName={handleSubmit}/>*/}
             </div>)
+        style.backgroundColor = 'green';
+        style[':hover'] = {backgroundColor: 'red'}
+    }
+    let classes = [];
+    if (state.persons.length <= 2) {
+        classes.push('red');
+
+    } else {
+        classes.push('bold');
     }
     return (
         //React.createElement('div', {className: 'App'}, React.createElement('h1', {className: 'App-header'}, 'Mustafa selam canım'))
+        //<StyleRoot>
         <div className="App">
             <header className="App-header">
+                <p className={classes}> hey my style worst :D</p>
                 {/*<img src={logo} className="App-logo" alt="logo"/>*/}
                 {/*<p>*/}
                 {/*    Edit <code>src/App.js</code> and save to reload.*/}
@@ -109,11 +127,14 @@ function App() {
                 {/*</a>*/}
                 {/*<textarea id="name" value={val} onChange={handleSubmit}/>*/}
                 {/*<button onClick={switchNameHandler.bind(this, 'Hüsrev')}>Değiştir</button>*/}
-                <button style={style} onClick={togglePersonsHandler}>Değiştir</button>
+                <MyButton onClick={togglePersonsHandler}>Değiştir</MyButton>
+                {/*<button style={style} onClick={togglePersonsHandler}>Değiştir</button>*/}
                 {persons}
             </header>
         </div>
+        //</StyleRoot>
     );
 }
 
 export default App;
+// export default Radium(App);
