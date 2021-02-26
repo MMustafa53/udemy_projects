@@ -1,0 +1,23 @@
+import React, {useState} from 'react';
+
+const ErrorBoundary = (props) => {
+    const [state, setState] = useState({
+        hasError: false,
+        errorMessage: 'qweqweqweqweqwewqq'
+    })
+    const componentDidCatch = (error, info) => {
+        setState({
+            hasError: true, errorMessage: error
+        })
+    }
+    if (state.hasError) {
+        return (<h1>{state.errorMessage}</h1>)
+    } else {
+        return (
+            props.children
+        )
+    }
+
+}
+
+export default ErrorBoundary

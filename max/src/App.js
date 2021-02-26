@@ -4,6 +4,7 @@ import React, {useState} from "react";
 import Person from './components/Person/Person';
 import styled from 'styled-components';
 // import Radium, { StyleRoot } from 'radium';
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 function App() {
     const [state, setState] = useState({
@@ -30,9 +31,13 @@ function App() {
     }
 
     const MyButton = styled.button`
-      background-color: ${props => props.alt ? 'pink': 'purple'};
+      background-color: ${props => props.alt ? 'pink' : 'purple'};
       cursor: pointer;
-      &:hover {background-color: ${props => props.alt ? 'black': 'salmon'}};
+
+      &:hover {
+        background-color: ${props => props.alt ? 'black' : 'salmon'}
+      }
+    ;
     `;
     const handleSubmit = (evt) => {
         setVal(evt.target.value)
@@ -83,12 +88,13 @@ function App() {
         persons = (
             <div>
                 {state.persons.map((item, index) => {
-                    return <Person
-                        func={() => deletePersonHandler(index)}
-                        name={item.name}
-                        age={item.age}
-                        key={index}
-                        changeName={(event) => changeNameHandle(event, item.id)}/>
+                    return <ErrorBoundary key={index}>
+                        <Person
+                            func={() => deletePersonHandler(index)}
+                            name={item.name}
+                            age={item.age}
+                            changeName={(event) => changeNameHandle(event, item.id)}/>
+                    </ErrorBoundary>
                 })}
                 {/*<Person age={state.persons[0].age} name={state.persons[0].name}*/}
                 {/*        func={switchNameHandler.bind(this, 'Hüsrev')}/>*/}
