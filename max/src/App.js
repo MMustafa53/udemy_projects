@@ -133,7 +133,7 @@ function App() {
                 {/*</a>*/}
                 {/*<textarea id="name" value={val} onChange={handleSubmit}/>*/}
                 {/*<button onClick={switchNameHandler.bind(this, 'Hüsrev')}>Değiştir</button>*/}
-                <MyButton alt={state.showPersons} onClick={togglePersonsHandler}>Değiştir</MyButton>
+                <MyButton onClick={togglePersonsHandler}>Değiştir</MyButton>
                 {/*<button style={style} onClick={togglePersonsHandler}>Değiştir</button>*/}
                 {persons}
             </header>
