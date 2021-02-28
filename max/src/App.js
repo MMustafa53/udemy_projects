@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {useState} from "react";
-import Person from './components/Person/Person';
+import Persons from './components/Persons/Persons';
 import styled from 'styled-components';
 // import Radium, { StyleRoot } from 'radium';
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
@@ -87,15 +87,18 @@ function App() {
     if (state.showPersons) {
         persons = (
             <div>
-                {state.persons.map((item, index) => {
-                    return <ErrorBoundary key={index}>
-                        <Person
-                            func={() => deletePersonHandler(index)}
-                            name={item.name}
-                            age={item.age}
-                            changeName={(event) => changeNameHandle(event, item.id)}/>
-                    </ErrorBoundary>
-                })}
+                <Persons
+                    persons={state.persons}
+                    del={deletePersonHandler}
+                    change={changeNameHandle}/>
+                {/*{state.persons.map((item, index) => {*/}
+                {/*    return <Person*/}
+                {/*        func={() => deletePersonHandler(index)}*/}
+                {/*        name={item.name}*/}
+                {/*        age={item.age}*/}
+                {/*        key={index}*/}
+                {/*        changeName={(event) => changeNameHandle(event, item.id)}/>*/}
+                {/*})}*/}
                 {/*<Person age={state.persons[0].age} name={state.persons[0].name}*/}
                 {/*        func={switchNameHandler.bind(this, 'Hüsrev')}/>*/}
                 {/*<Person age={state.persons[1].age} name={state.persons[1].name} func={switchNameHandler}*/}
