@@ -3,6 +3,7 @@ import './App.css';
 import React, {useState} from "react";
 import Persons from './components/Persons/Persons';
 import styled from 'styled-components';
+import Cockpit from './components/Cockpit/Cockpit';
 // import Radium, { StyleRoot } from 'radium';
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
@@ -30,15 +31,6 @@ function App() {
         })
     }
 
-    const MyButton = styled.button`
-      background-color: ${props => props.alt ? 'pink' : 'purple'};
-      cursor: pointer;
-
-      &:hover {
-        background-color: ${props => props.alt ? 'black' : 'salmon'}
-      }
-    ;
-    `;
     const handleSubmit = (evt) => {
         setVal(evt.target.value)
     }
@@ -109,35 +101,15 @@ function App() {
         style.backgroundColor = 'green';
         style[':hover'] = {backgroundColor: 'red'}
     }
-    let classes = [];
-    if (state.persons.length <= 2) {
-        classes.push('red');
-
-    } else {
-        classes.push('bold');
-    }
     return (
         //React.createElement('div', {className: 'App'}, React.createElement('h1', {className: 'App-header'}, 'Mustafa selam canım'))
         //<StyleRoot>
         <div className="App">
             <header className="App-header">
-                <p className={classes}> hey my style worst :D</p>
-                {/*<img src={logo} className="App-logo" alt="logo"/>*/}
-                {/*<p>*/}
-                {/*    Edit <code>src/App.js</code> and save to reload.*/}
-                {/*</p>*/}
-                {/*<a*/}
-                {/*    className="App-link"*/}
-                {/*    href="https://reactjs.org"*/}
-                {/*    target="_blank"*/}
-                {/*    rel="noopener noreferrer"*/}
-                {/*>*/}
-                {/*    Learn React*/}
-                {/*</a>*/}
-                {/*<textarea id="name" value={val} onChange={handleSubmit}/>*/}
-                {/*<button onClick={switchNameHandler.bind(this, 'Hüsrev')}>Değiştir</button>*/}
-                <MyButton onClick={togglePersonsHandler}>Değiştir</MyButton>
-                {/*<button style={style} onClick={togglePersonsHandler}>Değiştir</button>*/}
+                <Cockpit
+                    persons={state.persons}
+                    toggle={togglePersonsHandler}
+                />
                 {persons}
             </header>
         </div>
