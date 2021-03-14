@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from "styled-components";
 
 const MyButton = styled.button`
@@ -11,10 +11,23 @@ const MyButton = styled.button`
     ;
     `;
 
-const cockpit = (props) => {
+const Cockpit = props => {
+    useEffect(() =>{
+        console.log('use effect çağırıldı');
+        const timer = setTimeout(() => {
+            alert('Veri kaydedildi')
+        },1000);
+        return () =>{
+            clearTimeout(timer); // clean ederken alert vermesin diye eklendi
+            console.log('clean up');  // componene render edilmediğinde otomatik clean edilir Eğer iki useEffect
+                                      //  varsa biri çalıştıktan sonra kendini clean eder ve diğerine geçer
 
+        }
+    }, [props.personsLength]) // boş dizi ([]) verilirse bir kere çağırılır, useEffect birden falza çağrılacaksa
+                             // dizi içine verilen değişken değiştiği zaman tekrar çağırılır. props.persons
+                             // değiştiğiştiğinde tekrar use effect çağrılır.
     let css_class = [];
-    if (props.persons.length <= 2) {
+    if (props.personsLength <= 2) {
         css_class.push('red');
 
     } else {
@@ -44,4 +57,4 @@ const cockpit = (props) => {
     );
 };
 
-export default cockpit;
+export default React.memo(Cockpit);

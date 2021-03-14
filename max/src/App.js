@@ -124,7 +124,7 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <Cockpit
-                    persons={state.persons}
+                    personsLength={state.persons.length}
                     toggle={togglePersonsHandler}
                 />
                 {persons}

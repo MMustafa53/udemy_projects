@@ -20,7 +20,7 @@ const MyDiv = styled.div`
 const person = (props) => {
     // throw new Error('Hata döndürme testi');
     const style = {
-        '@media (min-width: 500px)': {width: '450px'}
+        '@media (minWidth: 500px)': {width: '450px'}
     }
     return (
         // <div className="Person" style={style}>
