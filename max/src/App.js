@@ -20,6 +20,8 @@ static getDerived StateFromProps(props, state){
     return state;
 }
 
+Component yerine PureComponent import edilmeli classbased componentlerde
+
 https://tr.reactjs.org/docs/react-component.html
 
 */
