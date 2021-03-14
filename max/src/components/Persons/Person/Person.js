@@ -1,8 +1,9 @@
-import React, { Fragment } from "react";
+import React, {Fragment} from "react";
 import '../../../App.css'
 import Aux from "../../../hoc/Aux";
 // import Radium from 'radium';
 import styled from 'styled-components';
+import withClass from "../../../hoc/withClass";
 
 const MyDiv = styled.div`
   width: 60%;
@@ -25,13 +26,13 @@ const person = (props) => {
     }
     return (
         // <div className="Person" style={style}>
-        <Aux> {/*<Fragment>*/}
-            <MyDiv style={style}>
-                <p onClick={props.func}> Ben hızım !! {getYear()}</p>
-                <p> {props.name} {props.age} {props.children}</p>
-                <input type="text" onChange={props.changeName}/>
-            </MyDiv>
-        </Aux> /*</Fragment>*/
+        /*<Aux> <Fragment>*/
+        <MyDiv style={style}>
+            <p onClick={props.func}> Ben hızım !! {getYear()}</p>
+            <p> {props.name} {props.age} {props.children}</p>
+            <input type="text" onChange={props.changeName}/>
+        </MyDiv>
+        /*</Aux> </Fragment>*/
     )
     // return [   JSX dizi olarak dönebilir
     //     // <div className="Person" style={style}>
@@ -42,5 +43,5 @@ const person = (props) => {
 };
 
 const getYear = () => Math.random();
-export default person;
+export default withClass(person, '');
 // export default Radium(person);
