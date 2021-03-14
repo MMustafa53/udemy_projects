@@ -7,6 +7,23 @@ import Cockpit from './components/Cockpit/Cockpit';
 // import Radium, { StyleRoot } from 'radium';
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
+
+
+/*
+
+class based component lar da constructor ve super çağırılır sonrasinda state atanır
+
+static tanımlanan metotlar çalışır örnek
+
+static getDerived StateFromProps(props, state){
+    console.log(props);
+    return state;
+}
+
+https://tr.reactjs.org/docs/react-component.html
+
+*/
+
 function App() {
     const [state, setState] = useState({
         persons: [
