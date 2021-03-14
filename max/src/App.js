@@ -6,8 +6,8 @@ import styled from 'styled-components';
 import Cockpit from './components/Cockpit/Cockpit';
 // import Radium, { StyleRoot } from 'radium';
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
-import WithClass from "./hoc/WithClass";
-
+import withClass from "./hoc/withClass";
+import Aux from "./hoc/Aux";
 
 /*
 
@@ -123,7 +123,7 @@ function App() {
     return (
         //React.createElement('div', {className: 'App'}, React.createElement('h1', {className: 'App-header'}, 'Mustafa selam canım'))
         //<StyleRoot>
-        <WithClass classes="App">
+        <Aux className="App">
             <header className="App-header">
                 <Cockpit
                     personsLength={state.persons.length}
@@ -131,10 +131,10 @@ function App() {
                 />
                 {persons}
             </header>
-        </WithClass>
+        </Aux>
         //</StyleRoot>
     );
 }
 
-export default App;
+export default withClass(App, 'App');
 // export default Radium(App);
