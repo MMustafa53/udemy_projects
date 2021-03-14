@@ -30,6 +30,12 @@ const person = (props) => {
             <input type="text" onChange={props.changeName}/>
         </MyDiv>
     )
+    // return [   JSX dizi olarak dönebilir
+    //     // <div className="Person" style={style}>
+    //     <p onClick={props.func}> Ben hızım !! {getYear()}</p>,
+    //     <p> {props.name} {props.age} {props.children}</p>,
+    //     <input type="text" onChange={props.changeName}/>,
+    // ]
 };
 
 const getYear = () => Math.random();
